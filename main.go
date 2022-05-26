@@ -70,7 +70,7 @@ func setupRoutes() {
 	pool := websocket.NewPool()
 	go pool.Start()
 
-	http.HandleFunc("/wss", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWS(pool, w, r)
 	})
 }
